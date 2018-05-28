@@ -1,0 +1,68 @@
+
+<main>
+  <div class="container-fluid" style="margin-top: 70px; ">
+
+      
+
+
+          <div class="col-sm-12" >
+              <div>
+                    <br>
+                    <center><h3>Your Lending Details</h3></center>
+                    
+                  <br>
+              </div>
+
+
+
+
+<!--Table-->
+<div class="scrollable" style="overflow-x:auto;overflow-y:auto;height:80%;background:white">
+<table class="table  ">
+
+  <!--Table head-->
+  <thead class="mdb-color darken-3">
+      <tr class="text-white">
+
+        <th>Id</th>
+        <th>Borrower Address</th>
+        <th>Token Address</th>
+        <th>Total Amount</th>
+        <th>Settlement Count</th>
+        <th>Next Settlement Time</th>
+        <th>Balance Loan</th>
+        <th>Months</th>
+
+      </tr>
+  </thead>
+  <!--Table head-->
+
+  
+  <tbody>
+      <tr *ngFor="let bank of Loan_pro; let i = index">
+          <td>{{ bank.id }}</td>
+          <td>{{ bank.borrower_add }}</td>
+          <td>{{ bank.token_add }}</td>
+          <td>{{ bank.amt }}</td>
+          <td>{{ bank.settlement }}</td>
+          <td>{{ bank.next_settle_time }}</td>
+          <td>{{ bank.bal_loan }}</td>
+          <td>{{ bank.month }}</td>
+
+        </tr>
+        </tbody>
+</table>
+</div>
+<!--Table-->
+
+          </div>
+        </div>
+        <ngx-spinner
+        bdColor="rgba(51,51,51,0.8)"
+        size="medium"
+        color="#fff"
+        loadingText="Loading..."
+        type="ball-scale-multiple">
+      </ngx-spinner>
+
+</main>

@@ -1,0 +1,77 @@
+<main>
+    <div class="container-fluid" style="margin-top: 70px; ">
+  <form class="form-horizontal" >
+    
+    <div>
+      <br>
+     <h3> Loan Due Pay</h3>
+    </div>
+    <div class="form-group">
+            <label class="control-label col-sm-2" for="quantity">Loan ID</label>
+            <div class="col-sm-4">
+              <input type="number" class="form-control" name="quantity" [(ngModel)]="pay_due" placeholder="Enter your Loan Id">
+            </div>
+        </div>
+           
+
+
+        <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                  <button type="submit" class="btn btn-default" (click)="submit()" >Submit</button>
+                </div>
+              </div>
+  </form>
+
+
+<br>
+<center><h3>Your Borrowing Details</h3></center>
+
+
+<!--Table-->
+<div class="scrollable" style="overflow-x:auto;overflow-y:auto;height:600px;background:white">
+<table class="table">
+
+  <!--Table head-->
+  <thead class="mdb-color darken-3">
+      <tr class="text-white">
+          
+          <th>Loan ID</th>
+          <th>Bank Address</th>
+          <th>Total Amount</th>
+          <th>Settlement</th>
+          <th>Next Settlement Time</th>
+          <th>Months</th>
+          <th>Balance Loan</th>
+          <th>Current Installment</th>
+
+      </tr>
+  </thead>
+  <!--Table head-->
+
+  <tbody>
+        <tr *ngFor="let bank of Loan_get; let i = index">
+          <td>{{ bank.id }}</td>
+          <td>{{ bank.lender_add }}</td>
+          <td>{{ bank.amt }}</td>
+          <td>{{ bank.settlement }}</td>
+          <td>{{ bank.next_settle_time }}</td>
+          <td>{{ bank.month }}</td>
+          <td>{{ bank.bal_loan }}</td>
+          <td>{{ bank.current_inst }}</td>
+
+        </tr>
+      </tbody>
+</table>
+<!--Table-->
+</div>
+</div>
+
+<ngx-spinner
+  bdColor="rgba(51,51,51,0.8)"
+  size="medium"
+  color="#fff"
+  loadingText="Loading..."
+  type="ball-scale-multiple">
+</ngx-spinner>
+
+</main>

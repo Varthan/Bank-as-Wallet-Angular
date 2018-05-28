@@ -3,189 +3,6 @@
 		"constant": false,
 		"inputs": [
 			{
-				"name": "addr",
-				"type": "address"
-			}
-		],
-		"name": "deposit",
-		"outputs": [],
-		"payable": true,
-		"stateMutability": "payable",
-		"type": "function"
-	},
-	{
-		"constant": false,
-		"inputs": [],
-		"name": "deregister",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"constant": false,
-		"inputs": [
-			{
-				"name": "fix_id",
-				"type": "uint256"
-			},
-			{
-				"name": "value",
-				"type": "uint256"
-			}
-		],
-		"name": "fix_amt_settlement",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"constant": false,
-		"inputs": [
-			{
-				"name": "bank_addr",
-				"type": "address"
-			},
-			{
-				"name": "year",
-				"type": "uint256"
-			}
-		],
-		"name": "Fixed_Deposit",
-		"outputs": [],
-		"payable": true,
-		"stateMutability": "payable",
-		"type": "function"
-	},
-	{
-		"constant": false,
-		"inputs": [
-			{
-				"name": "ln_id",
-				"type": "uint256"
-			},
-			{
-				"name": "due_amt",
-				"type": "uint256"
-			}
-		],
-		"name": "last_loan_due",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"constant": false,
-		"inputs": [
-			{
-				"name": "ln_id",
-				"type": "uint256"
-			},
-			{
-				"name": "due_amt",
-				"type": "uint256"
-			}
-		],
-		"name": "loan_due",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"constant": false,
-		"inputs": [
-			{
-				"name": "name",
-				"type": "bytes"
-			},
-			{
-				"name": "loan_interst",
-				"type": "uint256"
-			},
-			{
-				"name": "fixed_deposit",
-				"type": "uint256"
-			}
-		],
-		"name": "register",
-		"outputs": [],
-		"payable": true,
-		"stateMutability": "payable",
-		"type": "function"
-	},
-	{
-		"constant": false,
-		"inputs": [
-			{
-				"name": "token_address",
-				"type": "address"
-			},
-			{
-				"name": "bank_address",
-				"type": "address"
-			},
-			{
-				"name": "tokens",
-				"type": "uint256"
-			},
-			{
-				"name": "year",
-				"type": "uint8"
-			}
-		],
-		"name": "req_loan",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"constant": false,
-		"inputs": [
-			{
-				"name": "token",
-				"type": "address"
-			},
-			{
-				"name": "ad",
-				"type": "address"
-			}
-		],
-		"name": "tok_count",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"constant": false,
-		"inputs": [
-			{
-				"name": "from",
-				"type": "address"
-			},
-			{
-				"name": "to",
-				"type": "address"
-			},
-			{
-				"name": "amount",
-				"type": "uint256"
-			}
-		],
-		"name": "transfer",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"constant": false,
-		"inputs": [
-			{
 				"name": "amount",
 				"type": "uint256"
 			}
@@ -204,123 +21,11 @@
 				"type": "address"
 			}
 		],
-		"name": "bank",
-		"outputs": [
-			{
-				"name": "name",
-				"type": "bytes"
-			},
-			{
-				"name": "bal",
-				"type": "uint256"
-			},
-			{
-				"name": "status",
-				"type": "bool"
-			},
-			{
-				"name": "loan_interst",
-				"type": "uint256"
-			},
-			{
-				"name": "fixed_deposit_interst",
-				"type": "uint256"
-			},
-			{
-				"name": "token_count",
-				"type": "uint256"
-			},
-			{
-				"name": "borrow_amount",
-				"type": "uint256"
-			},
-			{
-				"name": "lend_amount",
-				"type": "uint256"
-			},
-			{
-				"name": "fixed_amount_bank",
-				"type": "uint256"
-			},
-			{
-				"name": "fixed_amount_user",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [],
-		"name": "bank_count",
+		"name": "my_clients_count",
 		"outputs": [
 			{
 				"name": "",
 				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [
-			{
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"name": "bank_users",
-		"outputs": [
-			{
-				"name": "",
-				"type": "address"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [
-			{
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"name": "fix_dep",
-		"outputs": [
-			{
-				"name": "fixed_dep_id",
-				"type": "uint256"
-			},
-			{
-				"name": "bank_address",
-				"type": "address"
-			},
-			{
-				"name": "user_address",
-				"type": "address"
-			},
-			{
-				"name": "amount",
-				"type": "uint256"
-			},
-			{
-				"name": "end_time",
-				"type": "uint256"
-			},
-			{
-				"name": "year",
-				"type": "uint256"
-			},
-			{
-				"name": "status",
-				"type": "bool"
 			}
 		],
 		"payable": false,
@@ -390,48 +95,6 @@
 				"type": "address"
 			}
 		],
-		"name": "loan_get_count",
-		"outputs": [
-			{
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [
-			{
-				"name": "",
-				"type": "address"
-			},
-			{
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"name": "loan_get_id",
-		"outputs": [
-			{
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [
-			{
-				"name": "",
-				"type": "address"
-			}
-		],
 		"name": "loan_pro_count",
 		"outputs": [
 			{
@@ -467,6 +130,24 @@
 		"type": "function"
 	},
 	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "fix_id",
+				"type": "uint256"
+			},
+			{
+				"name": "value",
+				"type": "uint256"
+			}
+		],
+		"name": "fix_amt_settlement",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
 		"constant": true,
 		"inputs": [
 			{
@@ -474,7 +155,62 @@
 				"type": "address"
 			}
 		],
-		"name": "my_clients_count",
+		"name": "bank",
+		"outputs": [
+			{
+				"name": "name",
+				"type": "bytes"
+			},
+			{
+				"name": "bal",
+				"type": "uint256"
+			},
+			{
+				"name": "status",
+				"type": "bool"
+			},
+			{
+				"name": "loan_interst",
+				"type": "uint256"
+			},
+			{
+				"name": "fixed_deposit_interst",
+				"type": "uint256"
+			},
+			{
+				"name": "token_count",
+				"type": "uint256"
+			},
+			{
+				"name": "borrow_amount",
+				"type": "uint256"
+			},
+			{
+				"name": "lend_amount",
+				"type": "uint256"
+			},
+			{
+				"name": "fixed_amount_bank",
+				"type": "uint256"
+			},
+			{
+				"name": "fixed_amount_user",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "",
+				"type": "address"
+			}
+		],
+		"name": "my_fix_acc_count",
 		"outputs": [
 			{
 				"name": "",
@@ -514,9 +250,117 @@
 			{
 				"name": "",
 				"type": "address"
+			},
+			{
+				"name": "",
+				"type": "uint256"
 			}
 		],
-		"name": "my_fix_acc_count",
+		"name": "my_fix_dep_id",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "ln_id",
+				"type": "uint256"
+			},
+			{
+				"name": "due_amt",
+				"type": "uint256"
+			}
+		],
+		"name": "last_loan_due",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "name",
+				"type": "bytes"
+			},
+			{
+				"name": "loan_interst",
+				"type": "uint256"
+			},
+			{
+				"name": "fixed_deposit",
+				"type": "uint256"
+			}
+		],
+		"name": "register",
+		"outputs": [],
+		"payable": true,
+		"stateMutability": "payable",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [],
+		"name": "deregister",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "bank_users",
+		"outputs": [
+			{
+				"name": "",
+				"type": "address"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "from",
+				"type": "address"
+			},
+			{
+				"name": "to",
+				"type": "address"
+			},
+			{
+				"name": "amount",
+				"type": "uint256"
+			}
+		],
+		"name": "transfer",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "bank_count",
 		"outputs": [
 			{
 				"name": "",
@@ -533,13 +377,9 @@
 			{
 				"name": "",
 				"type": "address"
-			},
-			{
-				"name": "",
-				"type": "uint256"
 			}
 		],
-		"name": "my_fix_dep_id",
+		"name": "loan_get_count",
 		"outputs": [
 			{
 				"name": "",
@@ -548,6 +388,166 @@
 		],
 		"payable": false,
 		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "fix_dep",
+		"outputs": [
+			{
+				"name": "fixed_dep_id",
+				"type": "uint256"
+			},
+			{
+				"name": "bank_address",
+				"type": "address"
+			},
+			{
+				"name": "user_address",
+				"type": "address"
+			},
+			{
+				"name": "amount",
+				"type": "uint256"
+			},
+			{
+				"name": "end_time",
+				"type": "uint256"
+			},
+			{
+				"name": "year",
+				"type": "uint256"
+			},
+			{
+				"name": "status",
+				"type": "bool"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "ln_id",
+				"type": "uint256"
+			},
+			{
+				"name": "due_amt",
+				"type": "uint256"
+			}
+		],
+		"name": "loan_due",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "addr",
+				"type": "address"
+			}
+		],
+		"name": "deposit",
+		"outputs": [],
+		"payable": true,
+		"stateMutability": "payable",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "bank_addr",
+				"type": "address"
+			},
+			{
+				"name": "year",
+				"type": "uint256"
+			}
+		],
+		"name": "Fixed_Deposit",
+		"outputs": [],
+		"payable": true,
+		"stateMutability": "payable",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "",
+				"type": "address"
+			},
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "loan_get_id",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "token",
+				"type": "address"
+			},
+			{
+				"name": "ad",
+				"type": "address"
+			}
+		],
+		"name": "tok_count",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "token_address",
+				"type": "address"
+			},
+			{
+				"name": "bank_address",
+				"type": "address"
+			},
+			{
+				"name": "tokens",
+				"type": "uint256"
+			},
+			{
+				"name": "year",
+				"type": "uint8"
+			}
+		],
+		"name": "req_loan",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
 		"type": "function"
 	}
 ]
