@@ -18,43 +18,50 @@
   </div>
 </form>-->
 <main>
-    <div class="container-fluid" style="margin-top: 70px; ">
+  <div class="container-fluid" style="margin-top: 70px; ">
 
-            <div class>
-                <form class="form-horizontal" >
-                  <div>
-                   <h3>Bank Register Form</h3>
+          <div class>
+              <form class="form-horizontal" [formGroup]="angForm" novalidate >
+                <div>
+                 <h3>Bank Register Form</h3>
+                </div>
+                <div class="form-group">
+                  <label class="control-label col-sm-2" for="productname">Bank Name:</label>
+                  <div class="col-sm-4">
+                    <input type="text" class="form-control" name="_bankname" [(ngModel)]="bankname" formControlName="_bankname" placeholder="Enter Bank Name">
                   </div>
-                  <div class="form-group">
-                    <label class="control-label col-sm-2" for="productname">Bank Name:</label>
-                    <div class="col-sm-4">
-                      <input type="text" class="form-control" name="productname" [(ngModel)]="bankname" placeholder="Enter Bank Name">
+                </div>
+                <div class="form-group">
+                  <label class="control-label col-sm-2" for="quantity">Loan Interst (Only in 1 to 100)</label>
+                  <div class="col-sm-4">
+                    <input type="number" class="form-control" name="_lnint" [(ngModel)]="lnint" formControlName="_lnint" placeholder="Enter ln int">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="control-label col-sm-2" for="brand">Fixed Deposit Interst (Only in 1 to 100)</label>
+                  <div class="col-sm-4">
+                    <input type="text" class="form-control" name="_fdint"  [(ngModel)]="fdint" formControlName="_fdint" placeholder="Enter Fd Interst">
+                  </div>
+                </div>
+                
+                <div *ngIf="angForm.controls['_bankname'].valid ">
+                  <div *ngIf="angForm.controls['_lnint'].valid && angForm.controls['_lnint'].value > 0 && angForm.controls['_lnint'].value <= 100">
+                    <div *ngIf="angForm.controls['_fdint'].valid && angForm.controls['_fdint'].value > 0 && angForm.controls['_fdint'].value <= 100">
+                      <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                          <button type="submit" class="btn btn-default" (click)="submit()" >Submit</button>
+                        </div>
+                      </div>
                     </div>
                   </div>
-                  <div class="form-group">
-                    <label class="control-label col-sm-2" for="quantity">Loan Interst</label>
-                    <div class="col-sm-4">
-                      <input type="text" class="form-control" name="quantity" [(ngModel)]="lnint" placeholder="Enter ln int">
-                    </div>
-                  </div>
-                  <div class="form-group">
-                    <label class="control-label col-sm-2" for="brand">Fixed Deposit Interst</label>
-                    <div class="col-sm-4">
-                      <input type="text" class="form-control" name="brand"  [(ngModel)]="fdint" placeholder="Enter Fd Interst">
-                    </div>
-                  </div>
-                  
-          
+                </div>
 
 
-                  <div class="form-group">
-                    <div class="col-sm-offset-2 col-sm-10">
-                      <button type="submit" class="btn btn-default" (click)="submit()" >Submit</button>
-                    </div>
-                  </div>
-                </form>
-            </div>
-        </div>
+                
+              </form>
+          </div>
+      </div>
+
 
         <ngx-spinner
   bdColor="rgba(51,51,51,0.8)"

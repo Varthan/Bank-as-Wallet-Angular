@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ContractService} from "../contract.service";
 import { NgxSpinnerService } from 'ngx-spinner';
+import { FormGroup,  FormBuilder,  Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-updateproduct',
@@ -9,7 +10,7 @@ import { NgxSpinnerService } from 'ngx-spinner';
 })
 export class UpdateproductComponent implements OnInit {
 
-
+  angForm: FormGroup;
   add : any;
   address : string;
   balance : number;
@@ -23,10 +24,18 @@ export class UpdateproductComponent implements OnInit {
 
 
 
+  constructor(private cs: ContractService, private spin : NgxSpinnerService, private fb: FormBuilder) { 
+    this.createForm();
+  }
 
-
-  constructor(private cs: ContractService, private spin : NgxSpinnerService) { }
-
+  createForm() {
+    this.angForm = this.fb.group({
+      token_add: ['', Validators.required ],
+      bank_add: ['', Validators.required ],
+      tok_count: ['', Validators.required ],
+      loan_time: ['', Validators.required ],
+    });
+  }
 
   ngOnInit() {
 
@@ -41,6 +50,7 @@ export class UpdateproductComponent implements OnInit {
           if (add != this.address)
           this.cs.bank_detail(add).then(obj => 
           {
+            if(obj[2] && add != this.address)
             this.All_bank2.push({"address":add,"bank_name":obj[0],"Bal":obj[1]+" Ξ","Loan_int":obj[3]+" %","Fix_dep_int":obj[4]+" %"})
           });
         })

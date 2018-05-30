@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ContractService } from '../contract.service';
 import { NgxSpinnerService } from 'ngx-spinner';
+import { FormGroup,  FormBuilder,  Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-withdraw',
@@ -15,14 +16,25 @@ export class WithdrawComponent implements OnInit {
   account:string;
   public bank_address:number;
 
+  angForm: FormGroup;
   public amount:number;
   public tokenaddress:number;
   public bankaddress:number;
 
-  constructor(private de:ContractService , private spin : NgxSpinnerService) {
+  constructor(private de:ContractService , private spin : NgxSpinnerService, private fb: FormBuilder) {
     de.getAccount().then(account=> this.account = account);
- 
+    this.createForm();
    }
+
+   createForm() {
+    this.angForm = this.fb.group({
+      amount: ['', Validators.required ],
+      withdraw: ['', Validators.required ],
+      tokenaddress: ['', Validators.required ],
+      bankaddress1: ['', Validators.required ],
+      amount1: ['', Validators.required ],
+    });
+  }
 
   ngOnInit() {
     this.de.basicfunctions();

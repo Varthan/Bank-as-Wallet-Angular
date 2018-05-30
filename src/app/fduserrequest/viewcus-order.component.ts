@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {ContractService} from "../contract.service";
 import { NgxSpinnerService } from 'ngx-spinner';
 import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, Router } from '@angular/router';
+import { FormGroup,  FormBuilder,  Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-viewcus-order',
@@ -9,6 +10,7 @@ import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, Router } from
   styleUrls: ['./viewcus-order.component.scss']
 })
 export class ViewcusOrderComponent implements OnInit {
+  angForm: FormGroup;
   public model:{};
   public fix_id:number;
 
@@ -20,8 +22,15 @@ export class ViewcusOrderComponent implements OnInit {
   fix_dep = [];
   pay_due : any;
 
-  constructor(private cs: ContractService, private spin : NgxSpinnerService, private router:Router) { }
+  constructor(private cs: ContractService, private spin : NgxSpinnerService, private router:Router, private fb: FormBuilder) { 
+    this.createForm();
+  }
 
+  createForm() {
+    this.angForm = this.fb.group({
+      fix_id: ['', Validators.required ],
+    });
+  }
 
   ngOnInit() {
 

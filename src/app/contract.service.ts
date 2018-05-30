@@ -521,14 +521,21 @@ public async getAccount(): Promise<string> {
           return;
       }
 
-      if(c == 0)
+      if(parseInt(c) != c || parseInt(c) <= 0)
       {
-          alert("Enter the Token Count...");
+          alert("Enter the Valid Token Count...");
           resolve(0);
           return;
       }
 
-      if(parseInt(d) != d || parseInt(d) == 0)
+      if(parseInt(d) == 0)
+      {
+          alert("Enter the Valid number of years");
+          resolve(0);
+          return;
+      }
+
+      if(parseInt(d) != d)
       {
           alert("Change the decimal values, You have only deposit the complete number of years");
           resolve(0);
@@ -559,6 +566,12 @@ public async getAccount(): Promise<string> {
   
     return new Promise((resolve, reject) => 
     {
+      if(parseInt(a) != a)
+      {
+          alert("Please give the Valid ID");
+          resolve(0);
+          return;
+      }
       
       self._tokenContract.loan(a, function(err,value)
         {
@@ -792,6 +805,13 @@ public async getAccount(): Promise<string> {
         var web3=this._web3;
         return new Promise((resolve, reject) =>
         {
+          if(parseInt(fix_id) != fix_id)
+          {
+              alert("Please give the Valid ID");
+              resolve(0);
+              return;
+          }
+
             this._tokenContract.fix_dep(fix_id, function(err,value)
             {
                 if(value[2] != account)
@@ -882,6 +902,14 @@ public async getAccount(): Promise<string> {
     let con = this._tokenContract;
     return new Promise((resolve, reject) =>
     {
+
+      if(parseInt(fix_idowner) != fix_idowner)
+          {
+              alert("Please give the Valid ID");
+              resolve(0);
+              return;
+          }
+
         this._tokenContract.fix_dep(fix_idowner, function(err,value)
         {
             if(value[1] != account)
@@ -1018,6 +1046,22 @@ public async fixeddeposit(bankaddress,depositamount,periodinyrs): Promise<any> {
     
   }
 
+  // public async tok_bal(a):Promise<number>
+  // {
+  //   let account = await this.getAccount();
+
+  //   return new Promise((resolve, reject) => {
+  //     let _web3 = this._web3;
+  //     this._tokenContract.ERC20(a).balanceOf(account,function (err, result) {
+  //       if(err != null) {
+  //         reject(err);
+  //       }
+
+  //     resolve(parseInt(result));
+  //     });
+  //   }) as Promise<number>;
+    
+  // }
 
 
   /*

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {ContractService} from "../contract.service";
 import { NgxSpinnerService } from 'ngx-spinner';
 import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, Router } from '@angular/router';
+import { FormGroup,  FormBuilder,  Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-loanpay',
@@ -10,6 +11,7 @@ import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, Router } from
 })
 export class LoanpayComponent implements OnInit {
 
+  angForm: FormGroup;
   add : any;
   games : any
   address : string;
@@ -18,8 +20,15 @@ export class LoanpayComponent implements OnInit {
   Loan_get = [];
   pay_due : any;
 
-  constructor(private cs: ContractService, private spin : NgxSpinnerService, private router:Router) { }
+  constructor(private cs: ContractService, private spin : NgxSpinnerService, private router:Router, private fb: FormBuilder) {
+    this.createForm();
+   }
 
+  createForm() {
+    this.angForm = this.fb.group({
+      ln_id: ['', Validators.required ],
+    });
+  }
 
   ngOnInit() {
 

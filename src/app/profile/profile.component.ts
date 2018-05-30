@@ -95,6 +95,7 @@ export class ProfileComponent implements OnInit {
     //   });
     // })
 
+    // this.cs.tok_bal(0xba14651a643d6c4856c66ae1271411727e42a486).then(count =>{alert("Result :"+count)})
 
     this.cs.loan_get_count().then(game =>{
     

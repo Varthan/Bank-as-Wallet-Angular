@@ -45,6 +45,7 @@ import { LoanFdGuard } from './loan-fd.guard';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
     NgxSpinnerModule,
     MDBBootstrapModule.forRoot()
   ],

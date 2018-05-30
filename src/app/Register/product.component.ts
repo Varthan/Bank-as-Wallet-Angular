@@ -1,7 +1,8 @@
 import { Component, OnInit ,NgModule} from '@angular/core';
 import {ContractService} from "../contract.service";
 import { NgxSpinnerService } from 'ngx-spinner';
-        
+import { FormGroup,  FormBuilder,  Validators } from '@angular/forms';
+
 @Component({
   selector: 'app-product',
   templateUrl: './product.component.html',
@@ -13,17 +14,26 @@ import { NgxSpinnerService } from 'ngx-spinner';
 export class ProductComponent implements OnInit{
  // products:product[]
   //public balance: number;
+  angForm: FormGroup;
   public model:{};
   public bankname:string;
   public fdint:string;
   public lnint:number;
   
 
-  constructor(private cs: ContractService, private spin : NgxSpinnerService) {
-      
+  constructor(private cs: ContractService, private spin : NgxSpinnerService, private fb: FormBuilder) {
+    this.createForm();
   }
   ngOnInit() {
     this.cs.basicfunctions();
+  }
+
+  createForm() {
+    this.angForm = this.fb.group({
+      _bankname: ['', Validators.required ],
+      _lnint: ['', Validators.required ],
+      _fdint: ['', Validators.required ],
+    });
   }
   
   submit(){

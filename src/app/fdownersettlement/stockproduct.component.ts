@@ -2,13 +2,15 @@ import { Component, OnInit } from '@angular/core';
 import {ContractService} from "../contract.service";
 import { NgxSpinnerService } from 'ngx-spinner';
 import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, Router } from '@angular/router';
-        
+import { FormGroup,  FormBuilder,  Validators } from '@angular/forms';
+
 @Component({
   selector: 'app-stockproduct',
   templateUrl: './stockproduct.component.html',
   styleUrls: ['./stockproduct.component.scss']
 })
 export class StockproductComponent implements OnInit {
+  angForm: FormGroup;
   public model:{};
   public fix_idowner:number;
   add : any;
@@ -19,7 +21,15 @@ export class StockproductComponent implements OnInit {
   fix_dep = [];
   pay_due : any;
 
-  constructor(private cs: ContractService, private spin : NgxSpinnerService, private router:Router) { }
+  constructor(private cs: ContractService, private spin : NgxSpinnerService, private router:Router, private fb: FormBuilder) {
+    this.createForm();
+   }
+
+  createForm() {
+    this.angForm = this.fb.group({
+      fix_idowner: ['', Validators.required ],
+    });
+  }
 
   ngOnInit() {
 

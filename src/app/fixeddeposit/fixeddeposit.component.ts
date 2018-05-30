@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ContractService} from "../contract.service";
 import { NgxSpinnerService } from 'ngx-spinner';
+import { FormGroup,  FormBuilder,  Validators } from '@angular/forms';
        
 @Component({
   selector: 'app-fixeddeposit',
@@ -9,6 +10,7 @@ import { NgxSpinnerService } from 'ngx-spinner';
 })
 export class FixeddepositComponent implements OnInit {
 
+  angForm: FormGroup;
   public model:{};
   public bankaddress:string;
   public depositamount:number;
@@ -21,7 +23,17 @@ export class FixeddepositComponent implements OnInit {
   All_bank1 = [];
 
 
-  constructor(private cs: ContractService, private spin : NgxSpinnerService) { }
+  constructor(private cs: ContractService, private spin : NgxSpinnerService, private fb: FormBuilder) { 
+    this.createForm();
+  }
+
+  createForm() {
+    this.angForm = this.fb.group({
+      bankaddress: ['', Validators.required ],
+      depositamount: ['', Validators.required ],
+      periodinyrs: ['', Validators.required ],
+    });
+  }
 
 
   ngOnInit() {
@@ -36,6 +48,7 @@ export class FixeddepositComponent implements OnInit {
           if (add != this.address)
           this.cs.bank_detail(add).then(obj => 
           {
+            if(obj[2] && add != this.address)
             this.All_bank1.push({"address":add,"bank_name":obj[0],"Bal":obj[1]+" Ξ","Fix_dep_int":obj[4]+" %"})
           });
         })
