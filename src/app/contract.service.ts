@@ -155,8 +155,10 @@ public async getAccount(): Promise<string> {
   
     return new Promise((resolve, reject) => {
       let _web3 = this._web3;
-      b*=100;
-      c*=100;
+      b = b.toFixed(2) *100;
+      c = c.toFixed(2) *100;
+      // alert(b);
+      // alert(c);
       this._tokenContract.register(_web3.fromAscii(a),b,c, {from:account,gas:600000},function (err, result) {
         if(err != null) {
           // reject(err);

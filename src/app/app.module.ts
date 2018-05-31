@@ -22,8 +22,19 @@ import {BankguardGuard} from './guard.guard';
 import {ReguserGuard} from './reguser.guard';
 import { MetamaskComponent } from './metamask/metamask.component';
 import { LoanFdGuard } from './loan-fd.guard';
+import { RouterModule, Routes } from '@angular/router';
 
-
+// const appRoutes: Routes = [
+//   { path: 'register', component: ProductComponent },
+//   { path: 'profile', component: ProfileComponent },
+//   { path: 'bankprocess', component: WithdrawComponent },
+//   { path: 'loanrequest', component: UpdateproductComponent },
+//   { path: 'loanpay', component: LoanpayComponent },
+//   { path: 'lendingdetail', component: LendingdetailComponent },
+//   { path: 'fixeddeposit', component: FixeddepositComponent },
+//   { path: 'fdamountrequest', component: ViewcusOrderComponent },
+//   { path: 'fdownersettlement', component: StockproductComponent },
+// ];
 
 @NgModule({
   declarations: [
@@ -33,7 +44,6 @@ import { LoanFdGuard } from './loan-fd.guard';
     UpdateproductComponent,
     ViewcusOrderComponent,
     StockproductComponent,
-  
     WithdrawComponent,
     FixeddepositComponent,
     LoanpayComponent,
@@ -41,14 +51,20 @@ import { LoanFdGuard } from './loan-fd.guard';
     ProfileComponent,
     MetamaskComponent,
   ],
+
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
     NgxSpinnerModule,
-    MDBBootstrapModule.forRoot()
+    MDBBootstrapModule.forRoot(),
+    // RouterModule.forRoot(
+    //   appRoutes,
+    //   { enableTracing: true } // <-- debugging purposes only
+    // )
   ],
+
   schemas: [ NO_ERRORS_SCHEMA ],
   providers: [ContractService,BankguardGuard,ReguserGuard,LoanFdGuard],
   bootstrap: [AppComponent]

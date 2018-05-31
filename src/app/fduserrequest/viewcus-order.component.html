@@ -11,8 +11,7 @@
                         <div class="col-sm-4">
                           <input type="text" class="form-control" type="number" name="fix_id" formControlName="fix_id" [(ngModel)]="fix_id" placeholder="Fixed Dep. ID">
                         </div>
-                      </div>
-                         
+                      </div>                     
   
   
                       <div *ngIf="angForm.controls['fix_id'].valid && angForm.controls['fix_id'].value >= 0 ">
@@ -30,7 +29,10 @@
             
           
                 <br>
-                    <center> <h2>My Deposit Details</h2></center>
+                    <center> 
+                      <h2>My Deposit Details</h2>
+                      <p><b style="color:red">Note :</b> If you withdraw within time period, You will get only 99% of your Deposited Ether and Penality is 1%. </p>
+                    </center>
   
   <!--Table-->
   <div class="scrollable" style="overflow-x:auto;overflow-y:auto;height:600px;background:white">
