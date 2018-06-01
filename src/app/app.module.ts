@@ -5,24 +5,22 @@ import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { AppRoutingModule } from './app-routing.module';
 import {FormsModule,ReactiveFormsModule} from '@angular/forms';
 import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
-import { ProductComponent } from './Register/product.component';
-import { UpdateproductComponent } from './loanrequest/updateproduct.component';
-import { ViewcusOrderComponent } from './fduserrequest/viewcus-order.component';
-import { StockproductComponent } from './fdownersettlement/stockproduct.component';
-import { WithdrawComponent } from './bankprocess/withdraw.component';
 import { ContractService } from './contract.service';
-import { FixeddepositComponent } from './fixeddeposit/fixeddeposit.component';
-import { LoanpayComponent } from './loanpay/loanpay.component';
-import { LendingdetailComponent } from './lendingdetail/lendingdetail.component';
 import { ProfileComponent } from './profile/profile.component';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import {BankguardGuard} from './guard.guard';
 // import {BankGuard} from './guard.guard';
 import {ReguserGuard} from './reguser.guard';
-import { MetamaskComponent } from './metamask/metamask.component';
 import { LoanFdGuard } from './loan-fd.guard';
 import { RouterModule, Routes } from '@angular/router';
+import { RegisterComponent } from './register/register.component';
+import { BankingComponent } from './banking/banking.component';
+import { LoanReqComponent } from './loan-req/loan-req.component';
+import { LoanDueComponent } from './loan-due/loan-due.component';
+import { LoanLendingComponent } from './loan-lending/loan-lending.component';
+import { FixDepComponent } from './fix-dep/fix-dep.component';
+import { FdAmtReqComponent } from './fd-amt-req/fd-amt-req.component';
+import { FdAmtSettleComponent } from './fd-amt-settle/fd-amt-settle.component';
 
 // const appRoutes: Routes = [
 //   { path: 'register', component: ProductComponent },
@@ -39,17 +37,15 @@ import { RouterModule, Routes } from '@angular/router';
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
-    ProductComponent,
-    UpdateproductComponent,
-    ViewcusOrderComponent,
-    StockproductComponent,
-    WithdrawComponent,
-    FixeddepositComponent,
-    LoanpayComponent,
-    LendingdetailComponent,
     ProfileComponent,
-    MetamaskComponent,
+    RegisterComponent,
+    BankingComponent,
+    LoanReqComponent,
+    LoanDueComponent,
+    LoanLendingComponent,
+    FixDepComponent,
+    FdAmtReqComponent,
+    FdAmtSettleComponent,
   ],
 
   imports: [

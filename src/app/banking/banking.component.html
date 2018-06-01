@@ -1,0 +1,114 @@
+<main>
+  <div class="container-fluid" style="margin-top: 70px; ">
+
+          <div>
+
+              <form class="form-horizontal"  [formGroup]="angForm" novalidate>
+                <div>
+                 <h2>Deposit Your Account</h2>
+                </div>
+                <div class="form-group">
+                  <label class="control-label col-sm-2" for="amount">Amount:</label>
+                  <div class="col-sm-4">
+                    <input type="number" class="form-control" id="amount" formControlName="amount" placeholder="Enter Amount" name="amount" [(ngModel)]="depositamt">
+                  </div>
+                </div>
+
+                <div *ngIf="angForm.controls['amount'].valid && angForm.controls['amount'].value > 0">
+                  <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                      <button type="submit" class="btn btn-default" (click)="dep()">Deposit</button>
+                    </div>
+                  </div>
+                </div>
+
+              </form>
+              <br><br>
+
+
+              <form class="form-horizontal"  [formGroup]="angForm" novalidate>
+                  <div>
+                   <h2> Withdraw in In Your Account</h2>
+                  </div>
+                  <div class="form-group">
+                    <label class="control-label col-sm-2" for="amount">Amount:</label>
+                    <div class="col-sm-4">
+                      <input type="number" class="form-control" id="amount" name="withdraw" formControlName="withdraw" [(ngModel)]="withdraw" placeholder="Enter Amount">
+                    </div>
+                  </div>
+
+                  <div *ngIf="angForm.controls['withdraw'].valid && angForm.controls['withdraw'].value > 0">
+                    <div class="form-group">
+                      <div class="col-sm-offset-2 col-sm-10">
+                        <button type="submit" class="btn btn-default" (click)="wit()">WithDraw</button>
+                      </div>
+                    </div>
+                  </div>
+
+                </form>
+
+
+                <br><br>
+                <form class="form-horizontal"  [formGroup]="angForm" novalidate>
+                    <div>
+                     <h2> Ether In Your Token Address</h2>
+                    </div>
+                    <div class="form-group">
+                      <label class="control-label col-sm-2" for="amount">Tokken Address</label>
+                      <div class="col-sm-4">
+                        <input type="text" class="form-control" id="amount" formControlName="tokenaddress" placeholder="Enter Address" name="tokenaddress" [(ngModel)]="tokenaddress">
+                      </div>
+                    </div>
+  
+                    <div *ngIf="angForm.controls['tokenaddress'].valid">
+                      <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                          <button type="submit" class="btn btn-default" (click)="token()">Submit</button>
+                        </div>
+                      </div>
+                    </div>
+
+                  </form>
+
+
+                  <br><br>
+                  <form class="form-horizontal"  [formGroup]="angForm" novalidate>
+                    <div>
+                     <h2> Transfer Amount</h2>
+                    </div>
+                    <div class="form-group">
+                      <label class="control-label col-sm-2" for="amount">Bank Address</label>
+                      <div class="col-sm-4">
+                        <input type="text" class="form-control" id="amount" formControlName="bankaddress1" placeholder="Enter Address" name="bankaddress1" [(ngModel)]="bank_address">
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label class="control-label col-sm-2" for="amount">Amount</label>
+                      <div class="col-sm-4">
+                        <input type="number" class="form-control" id="b_a" formControlName="amount1" placeholder="Enter Amount" name="amount1" [(ngModel)]="amount">
+                      </div>
+                    </div>
+
+                    <div *ngIf="angForm.controls['bankaddress1'].valid">
+                      <div *ngIf="angForm.controls['amount1'].valid && angForm.controls['amount1'].value > 0">
+                        <div class="form-group">
+                          <div class="col-sm-offset-2 col-sm-10">
+                            <button type="submit" class="btn btn-default" (click)="trans()">Transfer</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                  </form>
+          </div>
+      </div>
+
+<ngx-spinner
+bdColor="rgba(51,51,51,0.8)"
+size="medium"
+color="#fff"
+loadingText="Loading..."
+type="ball-scale-multiple">
+</ngx-spinner>
+
+</main>

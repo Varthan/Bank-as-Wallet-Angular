@@ -1,6 +1,6 @@
 <mdb-navbar SideClass="navbar fixed-top navbar-expand-lg navbar-dark blue scrolling-navbar ie-nav" [containerInside]="false">
   <logo>
-      <a class="logo navbar-brand" href="#"><strong>Bank As Wallet</strong></a>
+      <a class="logo navbar-brand" href="#" ><strong>Bank As Wallet</strong></a>
   </logo>
   <links>
       <ul class="navbar-nav mr-auto">
@@ -16,24 +16,24 @@
             </li> -->
           
           <li class="nav-item waves-light" mdbWavesEffect>
-                <a class="nav-link"routerLink="bankprocess">Bank Process</a>
+                <a class="nav-link"routerLink="banking">Bank Process</a>
             </li>
-            
+            <!-- <li class="nav-item dropdown" [routerLinkActive]="['active']" dropdown></li> -->
             <li class="nav-item dropdown" dropdown>
                     <a dropdownToggle mdbWavesEffect class="nav-link dropdown-toggle waves-light" mdbWavesEffect>
-                     Loan Process<span class="caret"></span></a>
+                     Loan Process<span class="caret" ></span></a>
                     <div *dropdownMenu class="dropdown-menu dropdown dropdown-primary" role="menu">
-                        <a class="dropdown-item waves-light" routerLink="loanrequest" mdbWavesEffect href="#">Loan Request</a>
-                        <a class="dropdown-item waves-light" routerLink="loanpay" mdbWavesEffect href="#">Loan Pay</a>
-                        <a class="dropdown-item waves-light" routerLink="lendingdetail"  mdbWavesEffect href="#">Lending Details</a></div>
+                        <a class="dropdown-item waves-light" routerLink="loan-request" mdbWavesEffect href="#">Loan Request</a>
+                        <a class="dropdown-item waves-light" routerLink="loan-due-pay" mdbWavesEffect href="#">Loan Pay</a>
+                        <a class="dropdown-item waves-light" routerLink="loan-lending-detail"  mdbWavesEffect href="#">Lending Details</a></div>
                 </li>
                     <li class="nav-item dropdown" dropdown>
                             <a dropdownToggle mdbWavesEffect class="nav-link dropdown-toggle waves-light" mdbWavesEffect>
                              Fixed Deposit<span class="caret"></span></a>
                             <div *dropdownMenu class="dropdown-menu dropdown dropdown-primary" role="menu">
-                                    <a class="dropdown-item waves-light" routerLink="fixeddeposit" mdbWavesEffect href="#">Fixed Deposit</a>
-                                <a class="dropdown-item waves-light" routerLink="fdamountrequest" mdbWavesEffect href="#">FD Amount Request</a>
-                                <a class="dropdown-item waves-light"routerLink="fdownersettlement" mdbWavesEffect href="#">FD Amount Owner Settlement</a>
+                                    <a class="dropdown-item waves-light" routerLink="fixed-deposit" mdbWavesEffect href="#">Fixed Deposit</a>
+                                <a class="dropdown-item waves-light" routerLink="fd-amount-request" mdbWavesEffect href="#">FD Amount Request</a>
+                                <a class="dropdown-item waves-light"routerLink="fd-amount-settlement" mdbWavesEffect href="#">FD Amount Owner Settlement</a>
                                 </div>
                         </li>
       </ul>

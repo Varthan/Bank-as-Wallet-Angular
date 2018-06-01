@@ -1,0 +1,95 @@
+
+<main>
+  <div class="container-fluid" style="margin-top: 70px; ">
+
+      <div class>
+          <form class="form-horizontal"  [formGroup]="angForm" novalidate>
+            <div>
+              <br>
+             <h3>Loan Request</h3>
+            </div>
+            <div class="form-group">
+              <label class="control-label col-sm-2" for="token_add">Token Address:</label>
+              <div class="col-sm-4">
+                <input type="text" class="form-control" name="token_add" formControlName="token_add" [(ngModel)]="token_address" placeholder="Enter Token Address">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="control-label col-sm-2" for="bank_add">Bank Address</label>
+              <div class="col-sm-4">
+                <input type="text" class="form-control" name="bank_add" formControlName="bank_add" [(ngModel)]="bank_address" placeholder="Enter Bank Address">
+              </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="tok_count">Token Count</label>
+                <div class="col-sm-4">
+                  <input type="number" class="form-control" name="tok_count" formControlName="tok_count" [(ngModel)]="token_count" placeholder="Enter Token Count ">
+                </div>
+            </div>
+            <div class="form-group">
+                  <label class="control-label col-sm-2" for="loan_time">Loan Period</label>
+                  <div class="col-sm-4">
+                    <input type="number" class="form-control" name="loan_time" formControlName="loan_time" [(ngModel)]="time" placeholder="Enter Period(in yrs)">
+                  </div>
+              </div>
+    
+              <div *ngIf="angForm.controls['token_add'].valid && angForm.controls['bank_add'].valid">
+                <div *ngIf="angForm.controls['tok_count'].valid && angForm.controls['tok_count'].value > 0">
+                  <div *ngIf="angForm.controls['loan_time'].valid && angForm.controls['loan_time'].value > 0">
+                    <div class="form-group">
+                      <div class="col-sm-offset-2 col-sm-10">
+                        <button type="submit" class="btn btn-default" (click)="submit()" >Request for loan</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+          </form>
+      </div>
+  
+
+
+    <br>
+    <center><h3>Bank details</h3></center>
+    <!--Table-->
+    <div class="scrollable" style="overflow-x:auto;overflow-y:auto;height:400px;background:white">
+    <table class="table">
+
+        <!--Table head-->
+        <thead class="mdb-color darken-3">
+            <tr class="text-white">
+                <th>Bank Address</th>
+                <th>Bank Name</th>
+                <th>Balance</th>
+                <th>Loan int</th>
+            </tr>
+        </thead>
+        <!--Table head-->
+
+        <!--Table body-->
+        <tbody>
+            <tr *ngFor="let bank of All_bank2; let i = index">
+                <td>{{ bank.address }}</td>
+                <td>{{ bank.bank_name }}</td>
+                <td>{{ bank.Bal }}</td>
+                <td>{{ bank.Loan_int }}</td>
+                
+
+            </tr>
+        </tbody>
+        <!--Table body-->
+    </table>
+  </div>
+    <!--Table-->
+</div>
+
+<ngx-spinner
+bdColor="rgba(51,51,51,0.8)"
+size="medium"
+color="#fff"
+loadingText="Loading..."
+type="ball-scale-multiple">
+</ngx-spinner>
+
+</main>

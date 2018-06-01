@@ -67,6 +67,26 @@ export class ContractService {
       })
       
     }, 100);
+
+  //  var id1 = setInterval(function() {
+  //     if (typeof window.web3 !== 'undefined') {
+  //         meta._web3 = new Web3(window.web3.currentProvider);
+  //         if (meta._web3.eth.accounts[0] !== meta._account) {
+  //             meta._account = meta._web3.eth.accounts[0];
+  //             if (meta._web3.eth.accounts[0] === undefined) {
+  //               meta.router.navigate(['']);
+  //                 // clearInterval(this.interval);
+  //             } else
+  //             {
+  //               window.location.reload(true);
+  //             }
+  //         }
+  //     } else
+  //     {
+  //       meta.router.navigate(['']);
+  //     }
+  //     }, 200);
+
     return Promise.resolve(this._account);
   }
 
